@@ -1,0 +1,746 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.product{
+  position: relative;
+  min-height: 500px;
+  background: linear-gradient(#494849, transparent);
+  /*background: url("../img/ration_bg.jpg") repeat-x;
+  background-position: center top;
+  background-size: contain;*/
+  margin-top: -30px;
+  padding-top: 60px;
+  @media screen and (min-width: 768px) {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+  @media screen and (min-width: 992px) {
+    margin-top: -120px;
+    padding-top: 170px;
+  }
+  &:before{
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+      position: absolute;
+      content: "";
+      /*background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);*/
+      background-image: url(../img/product-left.png),
+      url(../img/product-right.png);
+      background-repeat: no-repeat;
+      background-position: left -173px top 40px,
+      right -240px top -40px;
+      background-size: 400px, 467px;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    @media screen and (min-width: 992px) {
+      background-image: url(../img/product-left.png),
+      url(../img/product-right.png);
+      background-repeat: no-repeat;
+      background-position: left calc(50% - 630px) top 70px,
+      right calc(50% - 720px) top -180px;
+      background-size: 820px, 990px;
+    }
+  }
+  & .container{
+    position: relative;
+    height: 616px;
+    @media screen and (min-width: 768px) {
+      height: 560px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 860px;
+    }
+  }
+  & .title{
+    padding-top: 80px;
+    margin-top: -80px;
+  }
+  & .description{
+    display: block;
+    font-family: 'MetaPro-Book';
+    margin-top: 20px;
+    font-weight: 300;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+  &_main{
+    position: absolute;
+    top: 126px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 1s ease-in;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    @media screen and (min-width: 768px) {
+      top: 130px;
+      padding-bottom: 1px;
+    }
+    @media screen and (min-width: 992px) {
+      top: 200px;
+      padding-bottom: 1px;
+    }
+    &.active{
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  &_wrapper{
+    position: relative;
+    width: 310px;
+    height: 310px;
+    margin: 70px 0 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: 768px) {
+      width: 330px;
+      height: 330px;
+      margin: 60px 0 20px;
+      left: 45%;
+    }
+    @media screen and (min-width: 992px) {
+      width: 470px;
+      height: 470px;
+      margin: 90px 0;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background: url("../img/round.png") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      @media screen and (min-width: 992px) {
+        background: url("../img/round2.png") no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      display: none;
+      background: url("../img/dog-1.png") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 240px;
+      height: 270px;
+      top: 70%;
+      left: 120%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      @media screen and (min-width: 768px) {
+       display: block;
+      }
+      @media screen and (min-width: 992px) {
+        width: 420px;
+        height: 440px;
+        top: 55%;
+        left: 130%;
+      }
+    }
+
+  }
+  &_item{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 90px;
+    @media screen and (min-width: 768px) {
+      width: 110px;
+      height: 100px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 150px;
+      height: 135px;
+    }
+    &:nth-child(1){
+      left: 45%;
+      bottom: -10px;
+      @media screen and (min-width: 768px) {
+        bottom: -35px;
+      }
+      @media screen and (min-width: 992px) {
+        bottom: -60px;
+      }
+    }
+    &:nth-child(2){
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      @media screen and (min-width: 768px) {
+        left: -35px;
+      }
+      @media screen and (min-width: 992px) {
+        left: 20px;
+      }
+    }
+    &:nth-child(3){
+      left: 55%;
+      top: -10px;
+      @media screen and (min-width: 768px) {
+        top: -35px;
+        left: 60%;
+      }
+      @media screen and (min-width: 992px) {
+        top: -45px;
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background: url("../img/hexagon-black.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 107%;
+      height: 107%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+      z-index: -1;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      background: url("../img/arrow.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 40px;
+      height: 32px;
+      top: 28px;
+      right: -18px;
+      transform: translate(50, -50%);
+      @media screen and (min-width: 768px) {
+        top: 33px;
+        right: -15px;
+      }
+      @media screen and (min-width: 992px) {
+        top: 43px;
+        right: -25px;
+        width: 57px;
+        height: 45px;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+      & .product_img{
+        &.one{
+          background: url("../img/icon-2-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+        &.two{
+          background: url("../img/icon-1-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+        &.three{
+          background: url("../img/icon-3-hover.svg") no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      & .product_name{
+        color: $beigeLight;
+        transition: 0.3s;
+      }
+    }
+  }
+  &_img{
+    position: relative;
+    width: 35px;
+    height: 20px;
+    margin-top: 0;
+    @media screen and (min-width: 768px) {
+      width: 40px;
+      height: 25px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 50px;
+      height: 35px;
+    }
+    &.one{
+      background: url("../img/icon-2.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &.two{
+      background: url("../img/icon-1.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    &.three{
+      background: url("../img/icon-3.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+  &_name{
+    font-family: 'MetaPro-Bold';
+    font-size: 11px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    width: 65px;
+    text-align: center;
+    margin-top: 7px;
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+      width: 70px;
+      margin-top: 10px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 15px;
+      width: 90px;
+    }
+  }
+  &_result{
+    position: absolute;
+    width: 100%;
+    top: 126px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 1s ease-in;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    padding: 20px 0 0;
+    @media screen and (min-width: 768px) {
+      top: 130px;
+      padding: 20px 0 0;
+    }
+    @media screen and (min-width: 992px) {
+      top: 200px;
+      padding: 40px 0 0;
+    }
+    &.active{
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  & .swiper-container{
+    position: relative;
+    @media screen and (min-width: 768px) {
+      padding: 35px 0 0;
+    }
+  }
+  & .swiper-slide{
+    display: flex;
+    width: 100%;
+    height: 510px;
+    align-items: flex-start;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+      height: 356px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 480px;
+    }
+  }
+  & .swiper-button-next,
+  & .swiper-button-prev{
+    position: absolute;
+    outline: none;
+    transform: translateY(40%);
+    top: 120px;
+    width: 15px;
+    height: 26px;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+      transition: all 0.3s;
+    }
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+  & .swiper-button-prev{
+    background: url("../img/angle.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: rotate(180deg) translateY(-40%);
+    left: 0;
+    @media screen and (min-width: 360px) {
+      left: 15px;
+    }
+  }
+  & .swiper-button-next{
+    background: url("../img/angle.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    right: 0;
+    @media screen and (min-width: 360px) {
+      right: 15px;
+    }
+  }
+  .swiper-pagination{
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: block;
+      position: absolute;
+      text-align: center;
+      transition: 0.3s opacity;
+      left: 50%;
+      top: 30px;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  }
+  & .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px;
+  }
+  & .swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+  }
+  & .swiper-pagination-bullets-dynamic {
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px;
+    font-size: 26px;
+    @media screen and (min-width: 992px) {
+      font-size: 33px;
+    }
+  }
+  & .swiper-pagination-bullet {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    background: transparent;
+    border-radius: 0;
+    opacity: 0.2;
+    margin: 0 10px;
+    outline: none;
+    @media screen and (min-width: 992px) {
+      width: 180px;
+    }
+    &:before {
+      display: none;
+      color: white;
+      text-transform: uppercase;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:nth-child(1):before {
+      content: "Сухой рацион";
+    }
+    &:nth-child(2):before {
+      content: "Влажный рацион";
+    }
+    &:nth-child(3):before {
+      content: "Лакомства";
+    }
+  }
+  & .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 200px;
+    border: none;
+    @media screen and (min-width: 992px) {
+      width: 280px;
+    }
+    &:before {
+      font-family: 'MetaPro-Bold';
+      font-size: 26px;
+      display: inline-block;
+      @media screen and (min-width: 992px) {
+        font-size: 32px;
+      }
+    }
+    &-prev:before {
+      font-family: 'MetaPro-Book';
+      font-size: 26px;
+      display: inline-block;
+      @media screen and (min-width: 992px) {
+        font-size: 32px;
+      }
+    }
+    &-next:before {
+      font-family: 'MetaPro-Book';
+      font-size: 26px;
+      display: inline-block;
+      @media screen and (min-width: 992px) {
+        font-size: 32px;
+      }
+    }
+  }
+  &_close{
+    content: "";
+    position: absolute;
+    background: url("../img/close.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 40px;
+    height: 32px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 1;
+    z-index: 10;
+    @media screen and (min-width: 768px) {
+      width: 48px;
+      height: 40px;
+      top: 47px;
+      right: 40px;
+    }
+    @media screen and (min-width: 992px) {
+      top: 70px;
+    }
+    &:hover{
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+  }
+  &_box{
+    position: relative;
+    width: 273px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 560px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 700px;
+    }
+    &_left{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+    &_right{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+    &_name{
+      font-family: 'MetaPro-Bold';
+      font-size: 16px;
+      text-transform: uppercase;
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+    &_img{
+      position: relative;
+      height: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      &_wrapper{
+        position: relative;
+        width: 100%;
+        height: 130px;
+        margin: 40px 0 30px;
+        @media screen and (min-width: 768px) {
+          height: 150px;
+          width: 90%;
+          align-self: flex-start;
+          margin: 50px 0;
+        }
+        @media screen and (min-width: 992px) {
+          height: 200px;
+          width: 90%;
+          margin: 65px 0;
+        }
+        &.big{
+          &:before{
+            @media screen and (min-width: 768px) {
+              width: 120%;
+              height: 150%;
+            }
+          }
+          @media screen and (min-width: 768px) {
+            height: 200px;
+            width: 90%;
+            align-self: flex-start;
+            margin: 25px 0;
+          }
+          @media screen and (min-width: 992px) {
+            height: 280px;
+            width: 90%;
+            margin: 25px 0;
+          }
+        }
+        &:before{
+          content: "";
+          position: absolute;
+          background: radial-gradient(#494849 0%, transparent 70%);
+          width: 140%;
+          height: 200%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    &_info{
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: block;
+        position: relative;
+        font-family: 'MetaPro-Book';
+        font-size: 12px;
+        line-height: 1.3em;
+        width: 210px;
+        padding-left: 60px;
+        margin-left: -40px;
+      }
+      @media screen and (min-width: 992px) {
+        display: block;
+        position: relative;
+        font-family: 'MetaPro-Book';
+        font-size: 14px;
+        line-height: 1.3em;
+        width: 250px;
+        padding-left: 70px;
+        margin-left: -40px;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../img/check.svg") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 55px;
+        height: 50px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        @media screen and (min-width: 992px) {
+          width: 65px;
+          height: 60px;
+        }
+      }
+    }
+    &_caption{
+      font-family: 'MetaPro-Book';
+      font-size: 13px;
+      line-height: 1.3em;
+      text-transform: uppercase;
+      text-align: center;
+      max-width: 230px;
+      @media screen and (min-width: 768px) {
+        text-align: left;
+        margin-left: -50px;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 16px;
+        align-self: flex-start;
+        max-width: 280px;
+        margin-left: 0;
+      }
+    }
+    &_list{
+      width: 100%;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    &_item{
+      font-family: 'MetaPro-Book';
+      font-size: 12px;
+      line-height: 1.5em;
+      text-align: left;
+      @media screen and (min-width: 768px) {
+        font-size: 13px;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 16px;
+      }
+    }
+    &_link{
+      display: flex;
+      font-family: 'MetaPro-Book';
+      font-size: 13px;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-start;
+      width: 120px;
+      height: 25px;
+      border-radius: 25px;
+      border: 1px solid $white;
+      margin-top: 20px;
+      margin-left: 20px;
+      &:hover{
+        color: $black;
+        background-color: $beigeLight;
+        border: 1px solid $beigeLight;
+        transition: 0.3s;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 16px;
+        width: 150px;
+        height: 30px;
+        border-radius: 30px;
+      }
+    }
+    &_top{
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 30px;
+        z-index: 5;
+      }
+      @media screen and (min-width: 992px) {
+        margin-bottom: 70px;
+      }
+      & .product_box_name{
+        display: none;
+        white-space: nowrap;
+        width: 100%;
+        text-align: center;
+        @media screen and (min-width: 768px) {
+          display: block;
+          font-family: 'MetaPro-Book';
+          font-size: 17px;
+          line-height: 1em;
+          opacity: 0.5;
+          width: 148px;
+          cursor: pointer;
+        }
+        @media screen and (min-width: 992px) {
+          font-size: 20px;
+          width: 174px;
+        }
+        &:hover{
+          color: $beigeLight;
+          opacity: 1;
+          transition: 0.3s;
+        }
+        &.active{
+          font-family: 'MetaPro-Bold';
+          font-size: 26px;
+          width: 231px;
+          opacity: 1;
+          @media screen and (min-width: 992px) {
+            font-size: 32px;
+            width: 284px;
+          }
+        }
+      }
+    }
+  }
+}

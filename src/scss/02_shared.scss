@@ -1,0 +1,187 @@
+@import "partials/params";
+@import "partials/mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background-color: $black;
+  color: $white;
+  width: 100%;
+  margin: 0 auto;
+
+  @for $i from 1 to 6 {
+    &.page-#{$i} {
+      #pagination li:nth-of-type(#{$i}) {
+        @extend %active-dot;
+      }
+    }
+  }
+}
+
+main{
+  position: relative;
+  width: 100%;
+  background-color: $black;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 65px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  color: $white;
+  line-height: 1.1em;
+  padding: 0;
+  margin: 0;
+}
+
+div{
+  color: $white;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ov-hid{
+  overflow-y: hidden !important;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1160px;
+  padding: 0 15px;
+  margin: 0 auto;
+  z-index: 2;
+  @media screen and (min-width: 768px) {
+    padding: 0 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+.title{
+  position: relative;
+  font-family: 'MetaPro-Bold';
+  font-size: 18px;
+  color: $beigeLight;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3em;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 30px;
+    line-height: 1.1em;
+  }
+  &-line{
+    &:after{
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 1px;
+      background-color: $beigeLight;
+      left: 50%;
+      bottom: -12px;
+      transform: translateX(-50%);
+      @media screen and (min-width: 768px) {
+        bottom: -15px;
+      }
+      @media screen and (min-width: 992px) {
+        width: 150px;
+      }
+    }
+  }
+}
+
+.description{
+  display: none;
+  font-family: 'MetaPro-Bold';
+  font-size: 14px;
+  font-weight: 300;
+  color: $white;
+  text-align: center;
+  margin-top: 40px;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+}
+
+#pagination {
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  list-style: none;
+  z-index: 10;
+  @media screen and (min-width: 768px) {
+    display: block;
+    right: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    display: block;
+    right: calc(50% - 580px);
+  }
+
+  li {
+    position: relative;
+    margin: 8px 0;
+    background: transparent;
+    border: 1px solid $white;
+    border-radius: 100%;
+    opacity: 0.7;
+    width: 8px;
+    height: 8px;
+    transition: all .2s ease;
+
+    &:hover {
+      opacity: 1;
+      /*transform: scale(1.05);*/
+    }
+  }
+
+  a {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    left: 0;
+    top: 0;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+%active-dot {
+  background-color: $white;
+  opacity: 1;
+  /*transform: scale(1.05);*/
+}

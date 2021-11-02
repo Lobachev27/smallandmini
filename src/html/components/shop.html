@@ -1,0 +1,27 @@
+<section id="shop" class="shop">
+  <div class="container">
+    <h2 class="title title-line">Где купить</h2>
+    <div class="description">Сети магазинов</div>
+    <div class="shop_wrapper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          @@for (var i = 0; i < context.arr.length; i++) {
+          <div class="swiper-slide">
+            <div class="shop_box">
+              <div class="shop_img_wrapper">
+                <img class="shop_img" src="`+context.arr[i].img+`">
+              </div>
+              <div class="shop_name">`+context.arr[i].name+`</div>
+              <div class="shop_btn">Купить</div>
+              <a class="shop_link" href="`+context.arr[i].link+`" target="_blank"></a>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>

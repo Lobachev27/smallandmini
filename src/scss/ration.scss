@@ -1,0 +1,298 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.ration{
+  position: relative;
+  margin: 30px 0;
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+    margin: -30px 0 50px;
+  }
+  &_description{
+    position: relative;
+    font-family: 'MetaPro-Book';
+    font-size: 13px;
+    line-height: 1.2em;
+    color: $white;
+    text-align: center;
+    padding: 50px 0 35px;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      width: 230px;
+      left: 40%;
+      padding: 77px 0;
+      margin-top: -30px;
+      transform: translateX(-100%);
+    }
+    @media screen and (min-width: 992px) {
+      width: 255px;
+      font-size: 16px;
+      line-height: 1.4em;
+      left: 40%;
+      padding: 82px 0;
+      margin-top: -47px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background: linear-gradient(to top, #b79c6c 0%, #b79c6c 50%, transparent 100%);
+      width: calc(100% + 40px);
+      height: 110%;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      @media screen and (min-width: 768px) {
+        background: none;
+        background: url("../img/arrow-big.svg") no-repeat;
+        background-position: left center;
+        background-size: cover;
+        width: 450px;
+        height: 100%;
+        top: 50%;
+        left: 100%;
+        transform: translate(-85%, -50%);
+      }
+      @media screen and (min-width: 992px) {
+        width: 700px;
+        height: 340px;
+        transform: translate(-87%, -50%);
+      }
+    }
+    &_line{
+      position: absolute;
+      width: calc(100% + 40px);
+      height: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -1px;
+      z-index: 2;
+      @media screen and (min-width: 768px) {
+        width: 100px;
+        height: 262px;
+        left: 223px;
+        top: -1px;
+      }
+      @media screen and (min-width: 992px) {
+        width: 110px;
+        height: 346px;
+        left: 270px;
+      }
+      & .shape1{
+        width: 100%;
+        height: 100%;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+      }
+      & .shape2{
+        display: none;
+        width: 100%;
+        height: 100%;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &_wrapper{
+    position: relative;
+    width: 300px;
+    height: 370px;
+    margin: 30px 0 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: 768px) {
+      width: 370px;
+      height: 390px;
+      left: 50%;
+      transform: translateX(0);
+      margin: 80px 0 -30px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 495px;
+      height: 510px;
+      margin: 80px 0 -30px;
+    }
+  }
+  &_item{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 160px;
+    @media screen and (min-width: 768px) {
+      width: 205px;
+      height: 180px;
+    }
+    @media screen and (min-width: 992px) {
+      width: 270px;
+      height: 240px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      background: url("../img/hexagon-transparent.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 105%;
+      height: 105%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+    &:nth-child(1){
+      top: 0;
+      left: -8px;
+      @media screen and (min-width: 768px) {
+        left: 0;
+      }
+    }
+    &:nth-child(2){
+      right: -8px;
+      top: 106px;
+      @media screen and (min-width: 768px) {
+        right: 0;
+      }
+      @media screen and (min-width: 992px) {
+        top: 137px;
+      }
+    }
+    &:nth-child(3){
+      bottom: 0;
+      left: -8px;
+      @media screen and (min-width: 768px) {
+        left: 0;
+      }
+    }
+  }
+  &_img{
+    position: relative;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    &_wrapper{
+      position: relative;
+      width: 100%;
+      height: 90px;
+      margin-top: 10px;
+      @media screen and (min-width: 992px) {
+        height: 140px;
+        margin-top: 15px;
+      }
+    }
+  }
+  &_name{
+    font-family: 'MetaPro-Bold';
+    font-size: 11px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    width: 65px;
+    text-align: center;
+    margin-top: 7px;
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+      width: 90px;
+      margin-top: 12px;
+    }
+    @media screen and (min-width: 992px) {
+      font-size: 16px;
+    }
+  }
+  &_plus{
+    position: absolute;
+    background: url("../img/hexagon-gradient.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 72px;
+    height: 64px;
+    top: 188px;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    &:after{
+      content: "";
+      position: absolute;
+      background: url("../img/cross-hover.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 26px;
+      height: 26px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    @media screen and (min-width: 768px) {
+      top: 201px;
+      left: 42%;
+    }
+    @media screen and (min-width: 992px) {
+      top: 260px;
+      left: 43%;
+    }
+  }
+  &_gradient{
+    position: relative;
+    background: linear-gradient(to top, #544733 0%, transparent 100%);
+    width: 100%;
+    height: 150px;
+    @media screen and (min-width: 768px) {
+      height: 200px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 220px;
+    }
+    & .container{
+      position: relative;
+      height: 100%;
+      &:before{
+        content: "";
+        position: absolute;
+        background: url("../img/dog-1.png") no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 240px;
+        height: 230px;
+        bottom: 20px;
+        left: calc(50% + 55px);
+        transform: translateX(-50%);
+        @media screen and (min-width: 768px) {
+          background: url("../img/dog-2.png") no-repeat;
+          background-position: center;
+          background-size: contain;
+          width: 380px;
+          height: 270px;
+          bottom: 40px;
+          left: 8%;
+          transform: translateX(0);
+        }
+        @media screen and (min-width: 992px) {
+          width: 470px;
+          height: 340px;
+          bottom: 45px;
+          left: 12%;
+        }
+      }
+    }
+  }
+  &_line{
+    position: absolute;
+    width: 101%;
+    height: 30px;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0;
+    z-index: 2;
+    @media screen and (min-width: 768px) {
+      height: 55px;
+    }
+    @media screen and (min-width: 992px) {
+      height: 110px;
+    }
+    & svg{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

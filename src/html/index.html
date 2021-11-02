@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include("./shared/head.html", {
+  "title": "Purina Pro Plan для маленьких пород - ProPlan.ru"
+})
+
+<body>
+<!-- Google Tag Manager (noscript)-->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W69D2P" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript)-->
+
+@@include("./components/header.html")
+
+<main id="main" class="main">
+
+  @@include("./components/intro.html")
+
+  @@include("./components/product.html")
+
+  @@include("./components/ration.html", {
+    context: {
+      arr: [
+        {"img": "./img/ration-1.png", "name": "Сухой рацион",},
+        {"img": "./img/product-2.png", "name": "Влажный рацион",},
+        {"img": "./img/product-3.png", "name": "Лакомства",},
+      ]
+    }
+  })
+
+  @@include("./components/article.html", {
+    context: {
+      arr: [
+        {"class": "light", "name": "Про здоровье", "img": "./img/article-1.png", "link": "https://www.proplan.ru/smallandmini/article_health/", },
+        {"class": "dark", "name": "Про питание", "img": "./img/article-2.png", "link": "https://www.proplan.ru/smallandmini/article_food/", },
+        {"class": "light", "name": "Продукты, вредные для собак", "img": "./img/article-4.png", "link": "https://www.proplan.ru/dog/article/produkty-vrednye-dlya-sobak/", },
+        {"class": "dark", "name": "Про воспитание и уход", "img": "./img/article-3.png", "link": "https://www.proplan.ru/smallandmini/article_care/", },
+      ]
+    }
+  })
+
+  @@include("./components/video.html", {
+    context: {
+      arr: [
+        {"img": "./img/video-sk.jpg", "dataSrc": "UJhZ4ET2DoY",},
+        {"img": "./img/video-vk.jpg", "dataSrc": "vwX-rbl-wo8",},
+        {"img": "./img/video-lk.jpg", "dataSrc": "otaWahbEh4g",},
+      ]
+    }
+  })
+
+  @@include("./components/shop.html", {
+    context: {
+      arr: [
+        {"img": "./img/shop-1.png", "name": "Zoomenu", "link": "https://www.zoomenu.ru/shop/CID_63.html",},
+        {"img": "./img/shop-2.png", "name": "Tmall & Goods", "link": "https://ru.aliexpress.com/store/group/Pro-Plan/4517019_515649096.html?spm=a2g1y.12024536.pcShopHead_6552556.1_2_0",},
+        {"img": "./img/shop-3.png", "name": "Petfood", "link": "https://petfood.ru/collection/sobaki?characteristics%5B%5D=3805360&characteristics%5B%5D=3805922",},
+        {"img": "./img/shop-4.png", "name": "dogeat", "link": "https://www.dogeat.ru/catalog/dlya-sobak/purina-pro-plan/miniatyurnyie-porodyi/porodyi-melkogo-razmera/?sort=goods&discount=0",},
+        {"img": "./img/shop-5.png", "name": "PetShop", "link": "https://www.petshop.ru/brand/purina_pro_plan/dogs/#p609=193",},
+        {"img": "./img/shop-6.png", "name": "Ozon", "link": "https://www.ozon.ru/category/dlya-sobak-12301/pro-plan-7610736/?animalsize=60242",},
+        {"img": "./img/shop-7.png", "name": "ZooMag", "link": "https://zoomag.ru/catalog/%D0%A1%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0/%D0%A1%D1%83%D1%85%D0%BE%D0%B9%20%D0%BA%D0%BE%D1%80%D0%BC%20%D0%92%D0%B7%D1%80%D0%BE%D1%81%D0%BB%D1%8B%D0%B5/%D0%9C%D0%B5%D0%BB%D0%BA%D0%B8%D0%B5%20%D0%BF%D0%BE%D1%80%D0%BE%D0%B4%D1%8B?page=0&adding=false&brand=Purina+Pro+Plan",},
+        {"img": "./img/shop-8.png", "name": "Mir korma", "link": "https://www.mirkorma.ru/catalog/suhoy-korm-dlya-sobak/?set_filter=Y&catalogFilter_95_4051078336=Y&catalogFilter_97_1368995279=Y#product_list",},
+        {"img": "./img/shop-9.png", "name": "Wildberries", "link": "https://www.wildberries.ru/catalog/tovary-dlya-zhivotnyh/dlya-sobak?brand=34253",},
+        {"img": "./img/shop-10.png", "name": "Beru", "link": "https://beru.ru/catalog/korma-dlia-sobak/77660/list?hid=15685787&glfilter=7893318%3A10716628&glfilter=16235744%3A16235746%2C16235745",},
+        {"img": "./img/shop-11.png", "name": "UniZoo", "link": "https://unizoo.ru/catalog/dog/food/sv-pro-plan/sv-porody-malogo-razmera/",},
+        {"img": "./img/shop-12.png", "name": "OnlineTrade", "link": "https://www.onlinetrade.ru/catalogue/korm_dlya_sobak-c1017/?producer[]=PRO%20PLAN&price1=350&price2=4590&porodi[]=%C2%F1%E5&porodi[]=%CC%E5%EB%EA%E8%E5&ves_korma1=700&ves_korma2=14000&advanced_search=1&rating_active=0&special_active=1&selling_active=1&producer_active=1&price_active=0&vozrast_givotnogo_active=1&tip_korma_active=1&osnovnoy_komponent_active=1&porodi_active=1&osobennosti_active=1&ves_korma_active=1&cat_id=1017",},
+        {"img": "./img/shop-13.png", "name": "Magizoo", "link": "https://magizoo.ru/search/?q=pro+plan+%D0%B4%D0%BB%D1%8F+%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D1%85+%D0%BF%D0%BE%D1%80%D0%BE%D0%B4&s=",},
+        {"img": "./img/shop-14.png", "name": "Zoo-galereya", "link": "https://zoo-galereya.ru/search_results.html?search=pro+plan+%D0%B4%D0%BB%D1%8F+%D0%BC%D0%B5%D0%BB%D0%BA%D0%B8%D1%85+%D0%BF%D0%BE%D1%80%D0%BE%D0%B4",},
+        {"img": "./img/shop-15.png", "name": "Purina", "link": "https://shop.purina.ru/brands/pro-plan/shopby/prn_naznachenie-sobaki/prn_razmer-melkie_i_karlikovye",},
+      ]
+    }
+  })
+
+</main>
+
+@@include("./components/footer.html")
+
+@@include("./components/pagination.html")
+
+@@include("./components/modal.html")
+
+@@include("./shared/script.html")
+
+</body>
+</html>

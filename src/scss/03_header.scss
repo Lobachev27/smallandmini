@@ -1,0 +1,229 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  &_btn{
+    display: block;
+    position: absolute;
+    left: 12px;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    & .header_nav_item{
+      display: block;
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+  &_top{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33px;
+    background-color: $red;
+    z-index: 10;
+  }
+  &_purina{
+    &_img{
+      width: 200px;
+      padding-top: 4px;
+      @media screen and (min-width: 768px) {
+        display: block;
+        width: 341px;
+        padding: 0;
+      }
+      /*&-mobile{
+        display: block;
+        width: 123px;
+        @media screen and (min-width: 768px) {
+          display: none;
+        }
+      }*/
+    }
+  }
+  &_bottom{
+    position: relative;
+    height: 32px;
+    width: 100%;
+    background-color: $beige;
+    z-index: 10;
+    & .container{
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 32px;
+      @media screen and (min-width: 768px) {
+        justify-content: center;
+      }
+    }
+  }
+  &_logo{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    @media screen and (min-width: 768px) {
+      left: 25px;
+      transform: translateX(0);
+    }
+    @media screen and (min-width: 992px) {
+      left: 50px;
+    }
+    @media screen and (min-width: 1200px) {
+      left: 100px;
+    }
+    &_img{
+      width: 160px;
+      @media screen and (min-width: 768px) {
+        width: 190px;
+      }
+      @media screen and (min-width: 1200px) {
+        width: 220px;
+      }
+    }
+    &_link{
+      display: block;
+      z-index: 15;
+    }
+  }
+  &_mobile{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 65px);
+    top: 65px;
+    left: 0;
+    background-color: #070707;
+    z-index: 19;
+    opacity: 0.98;
+    left: -100%;
+    transition: 1s;
+    &.active{
+      left: 0;
+      transition: left 1s;
+    }
+    & .container{
+      height: 100%;
+    }
+  }
+  &_nav{
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+    &.mobile{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    &_item{
+      position: relative;
+      display: block;
+      font-family: 'MetaPro-Book';
+      font-size: 14px;
+      margin-right: 25px;
+      transition: 0.3s;
+      @media screen and (min-width: 992px) {
+        font-size: 16px;
+        margin-right: 60px;
+      }
+      &.mobile{
+        font-family: 'MetaPro-Book';
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 30px;
+        transition: 0.3s;
+      }
+      &:last-child{
+        margin-bottom: 0;
+        @media screen and (min-width: 768px) {
+          margin-right: 0;
+          &:after{
+            display: none;
+          }
+        }
+      }
+      &:hover{
+        color: $beigeLight;
+        transition: 0.3s;
+        @media screen and (min-width: 768px) {
+          color: $white;
+        }
+        @media screen and (min-width: 1200px) {
+          color: $black;
+        }
+      }
+      &:after{
+        display: none;
+        @media screen and (min-width: 768px) {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $white;
+          top: 50%;
+          right: -15px;
+          transform: translateY(-50%);
+          z-index: -1;
+        }
+        @media screen and (min-width: 992px) {
+          width: 5px;
+          height: 5px;
+          right: -30px;
+        }
+      }
+    }
+  }
+  &_hamburger{
+    display: block;
+    background: url("../img/burger-menu.svg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 22px;
+    height: 18px;
+    justify-self: flex-end;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    /*&:hover{
+      background: url("../img/burger-menu-hover.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 22px;
+      height: 18px;
+      transition: 0.3s;
+      cursor: pointer;
+    }*/
+    &.active{
+      background: url("../img/cross.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      /*&:hover{
+        background: url("../img/cross-hover.svg") no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 18px;
+        height: 18px;
+      }*/
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<section class="video">
+  <div class="container">
+    <div class="video_slider">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          @@for (var i = 0; i < context.arr.length; i++) {
+          <div class="swiper-slide">
+            <div class="video_box">
+              <img class="video_img" src="`+context.arr[i].img+`">
+              <div class="video_play"></div>
+              <a class="video_link" href="javascript:void(0);" data-src="`+context.arr[i].dataSrc+`" onclick="open_modal('videoModal')"></a>
+            </div>
+          </div>
+          }
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </div>
+</section>

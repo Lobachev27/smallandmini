@@ -1,0 +1,275 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.video{
+  position: relative;
+  margin: 30px 0 0;
+  @media screen and (min-width: 768px) {
+    margin: 60px 0 20px;
+  }
+  @media screen and (min-width: 992px) {
+    margin: 80px 0 40px;
+  }
+  &_slider{
+    position: relative;
+    width: 840px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+      width: 1710px;
+    }
+    & .swiper-container{
+      position: relative;
+      overflow: visible;
+    }
+    & .swiper-slide{
+      opacity: 0.3;
+      z-index: -1;
+      & .video_box{
+        z-index: -1;
+      }
+      & .video_play{
+        opacity: 0;
+      }
+      & .video_link{
+        display: none;
+      }
+    }
+    & .swiper-slide-active{
+      opacity: 1;
+      & .video_box{
+        z-index: 1;
+        &:hover{
+          & .video_play{
+            transform: translate(-50%, -50%) scale(0.9);
+            transition: all 0.3s;
+            cursor: pointer;
+            &:before{
+              background: url("../../img/btn-play.svg") no-repeat;
+              background-position: center;
+              background-size: contain;
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+      & .video_play{
+        z-index: 1;
+        opacity: 1;
+      }
+      & .video_link{
+        display: block;
+      }
+    }
+    & .swiper-button-next,
+    & .swiper-button-prev{
+      position: absolute;
+      outline: none;
+      transform: translateY(40%);
+      top: 50%;
+      width: 15px;
+      height: 26px;
+      transition: all 0.3s;
+      opacity: 0.5;
+      &:hover{
+        opacity: 1;
+        transition: all 0.3s;
+      }
+      @media screen and (min-width: 768px) {
+        width: 18px;
+        height: 28px;
+      }
+    }
+    & .swiper-button-prev{
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      transform: rotate(180deg) translateY(-40%);
+      left: 265px;
+      @media screen and (min-width: 360px) {
+        left: 230px;
+      }
+      @media screen and (min-width: 768px) {
+        left: 500px;
+      }
+      @media screen and (min-width: 992px) {
+        left: 460px;
+      }
+    }
+    & .swiper-button-next{
+      background: url("../img/angle.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      right: 265px;
+      @media screen and (min-width: 360px) {
+        right: 230px;
+      }
+      @media screen and (min-width: 768px) {
+        right: 500px;
+      }
+      @media screen and (min-width: 992px) {
+        right: 460px;
+      }
+    }
+  }
+  &_box{
+    position: relative;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    @media screen and (min-width: 768px) {
+      height: 300px;
+    }
+  }
+  &_img{
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+  }
+  &_play{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    top: 75%;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    @media screen and (min-width: 768px) {
+      width: 140px;
+      height: 140px;
+      top: 74%;
+      left: 105px;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      background: url("../../img/btn-play.svg") no-repeat;
+      background-position: center;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @media screen and (min-width: 768px) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+  &_link{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(12, 12, 12, 0.85);
+  z-index: 88888888;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  &#videoModal{
+    & .videoModal{
+      &_wrapper{
+        width: calc(100% - 30px);
+        max-width: initial;
+        height: 52.5vw;
+        position: relative;
+        margin: 0 auto;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        background-color: #121212;
+        border: 1px solid $beige;
+        box-shadow: 0 0 20px 10px rgba(74, 13, 115, 0.15);
+        @media screen and (min-width: 768px) {
+          width: 540px;
+          height: 307px;
+        }
+        @media screen and (min-width: 992px) {
+          width: 838px;
+          height: 472px;
+        }
+      }
+      &_box{
+        position: relative;
+        height: calc(52.5vw - 2px);
+        overflow: hidden;
+        @media screen and (min-width: 768px) {
+          height: 304px;
+        }
+        @media screen and (min-width: 992px) {
+          height: 470px;
+        }
+      }
+      &_video{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.modalDialog.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog_wrapper {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 60px 70px 40px;
+  background-color: #070707;
+  border: 1px solid $beige;
+  box-shadow: 0 0 20px 10px rgba(74, 13, 115, 0.15);
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  background: url("../img/cross.svg") no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  &.two{
+    z-index: 99999999999;
+  }
+  &:hover{
+    transition: all 0.3s;
+    opacity: 1;
+  }
+}
